@@ -1,13 +1,14 @@
-import { AppBar, Toolbar, Typography } from "@mui/material";
+import { AppBar, Typography } from "@mui/material";
+import { ToolBar } from "./Header.styled";
 
 const Header = () => {
   return (
     <AppBar>
-      <Toolbar>
+      <ToolBar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Home
         </Typography>
-      </Toolbar>
+      </ToolBar>
     </AppBar>
   );
 };
