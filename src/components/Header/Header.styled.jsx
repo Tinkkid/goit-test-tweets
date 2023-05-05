@@ -1,6 +1,11 @@
 import styled from "@emotion/styled";
-import { Toolbar } from "@mui/material";
+import { NavLink } from "react-router-dom";
 
-export const ToolBar = styled(Toolbar)`
-  background-color: #5736a3;
+export const StyledLink = styled(NavLink)`
+  color: #a282ed;
+  text-decoration: none;
+
+  &.active {
+    color: white;
+  }
 `;
