@@ -1,5 +1,11 @@
-const Cards = () => {
-  return <div>Cards</div>;
+const Tweets = () => {
+  return (
+    <div>
+      <ul>
+        <li></li>
+      </ul>
+    </div>
+  );
 };
 
-export default Cards;
+export default Tweets;

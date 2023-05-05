@@ -6,9 +6,11 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <Suspense fallback={<p>Load</p>}>
-        <Outlet />
-      </Suspense>
+      <main>
+        <Suspense fallback={<p>Load</p>}>
+          <Outlet />
+        </Suspense>
+      </main>
     </>
   );
 };
