@@ -5,13 +5,15 @@ import {
   Logo,
   AvatarEllipse,
   AvatarStripe,
+  TextInfo,
+  BtnFollow,
 } from "./UserCard.styled";
 import svgAbove from "../../assets/img/image-above.svg";
 import logo from "../../assets/img/logo.svg";
 
 export const UserCard = ({ name, tweets, followers, avatar }) => {
   return (
-    <Grid xs={4} sx={stylingGrid.item}>
+    <Grid xs={6} sx={stylingGrid.item}>
       <CardContainer>
         <Logo>
           <img src={logo} alt="logo" />
@@ -23,9 +25,10 @@ export const UserCard = ({ name, tweets, followers, avatar }) => {
           <img src={avatar} alt="avatar" width="62" height="62" />
         </AvatarEllipse>
         <AvatarStripe></AvatarStripe>
-        <p>{name}</p>
-        <p>{tweets}</p>
-        <p>{followers}</p>
+        <TextInfo>{name}</TextInfo>
+        <TextInfo>{tweets} Tweets</TextInfo>
+        <TextInfo>{followers} Followers</TextInfo>
+        <BtnFollow>Follow</BtnFollow>
       </CardContainer>
     </Grid>
   );

@@ -4,7 +4,7 @@ import { stylingGrid } from "../UserCard/UserCard.styled";
 
 export const UsersList = ({ users }) => {
   return (
-    <Grid container spacing={6} sx={stylingGrid.container}>
+    <Grid container spacing={8} sx={stylingGrid.container}>
       {users.map(({ user, id, avatar, tweets, followers }) => (
         <UserCard
           key={id}

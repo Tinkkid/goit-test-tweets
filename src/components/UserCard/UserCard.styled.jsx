@@ -9,6 +9,8 @@ export const CardContainer = styled.div`
   margin: 0 auto;
   width: 380px;
   height: 460px;
+  padding-top: 28px;
+  padding-bottom: 36px;
   background: linear-gradient(
     114.99deg,
     #471ca9 -0.99%,
@@ -21,7 +23,7 @@ export const CardContainer = styled.div`
 
 export const stylingGrid = {
   container: {
-    padding: 2,
+    padding: 20,
     paddingTop: 6,
     marginTop: 0,
     marginLeft: 0,
@@ -29,6 +31,7 @@ export const stylingGrid = {
   },
   item: {
     padding: 2,
+    justifyContent: "space-between",
   },
 };
 
@@ -56,7 +59,36 @@ export const AvatarStripe = styled.div`
   position: absolute;
   width: 100%;
   height: 8px;
+  top: 45%;
   background: #ebd8ff;
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
     inset 0px -1.71846px 3.43693px #ae7be3, inset 0px 3.43693px 2.5777px #fbf8ff;
+`;
+
+export const TextInfo = styled.p`
+  margin-top: 16px;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #ebd8ff;
+`;
+
+export const BtnFollow = styled.button`
+  width: 196px;
+  margin-top: 36px;
+  padding: 14px;
+  background: #ebd8ff;
+  box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
+  border-radius: 10.3108px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #373737;
+  cursor: pointer;
 `;
