@@ -59,7 +59,7 @@ export const UserCard = ({ name, tweets, followers, avatar, id }) => {
         </TextInfo>
         <TextInfo>{tweets} Tweets</TextInfo>
         <TextInfo>{totalFollowers} Followers</TextInfo>
-        <BtnFollow onClickBtn={handleClick} />
+        <BtnFollow onClickBtn={handleClick} isFollowing={isFollowing} />
       </CardContainer>
     </Grid>
   );
