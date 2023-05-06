@@ -9,3 +9,14 @@ export const StyledLink = styled(NavLink)`
     color: white;
   }
 `;
+
+export const styleBar = {
+  appbar: {
+    bgcolor: "primary.main",
+    fontFamily: "Montserrat",
+    textTransform: "uppercase",
+  },
+  toolbar: {
+    justifyContent: "center",
+  },
+};

@@ -25,7 +25,9 @@ export const UserCard = ({ name, tweets, followers, avatar }) => {
           <img src={avatar} alt="avatar" width="62" height="62" />
         </AvatarEllipse>
         <AvatarStripe></AvatarStripe>
-        <TextInfo>{name}</TextInfo>
+        <TextInfo>
+          <b>{name}</b>
+        </TextInfo>
         <TextInfo>{tweets} Tweets</TextInfo>
         <TextInfo>{followers} Followers</TextInfo>
         <BtnFollow>Follow</BtnFollow>

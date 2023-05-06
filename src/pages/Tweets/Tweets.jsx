@@ -18,9 +18,9 @@ const Tweets = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <UsersList users={users} />
-    </div>
+    </>
   );
 };
 

@@ -83,7 +83,6 @@ export const BtnFollow = styled.button`
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
   border-radius: 10.3108px;
   font-family: "Montserrat";
-  font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
@@ -91,4 +90,10 @@ export const BtnFollow = styled.button`
   text-align: center;
   color: #373737;
   cursor: pointer;
+  transition: all 250ms linear 0s;
+
+  &:hover,
+  &:focus {
+    background: #5cd3a8;
+  }
 `;
