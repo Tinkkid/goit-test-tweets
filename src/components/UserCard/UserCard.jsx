@@ -18,7 +18,6 @@ export const UserCard = ({ name, tweets, followers, avatar, id }) => {
   const [isFollowing, setIsFollowing] = useState(
     useMyGetStorage(`key${id}`, false)
   );
-
   const [totalFollowers, setTotalFollowers] = useState(followers);
 
   const handleClick = async () => {
@@ -26,7 +25,6 @@ export const UserCard = ({ name, tweets, followers, avatar, id }) => {
       const updateQuantityFollowers = await updateUser(id, {
         followers: totalFollowers + 1,
       });
-      console.log(updateQuantityFollowers);
       setTotalFollowers(updateQuantityFollowers.followers);
       setIsFollowing(true);
       localStorage.setItem(`key${id}`, JSON.stringify(true));
