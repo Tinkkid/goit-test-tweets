@@ -5,8 +5,14 @@ import { stylingGrid } from "../UserCard/UserCard.styled";
 export const UsersList = ({ users }) => {
   return (
     <Grid container spacing={6} sx={stylingGrid.container}>
-      {users.map(({ user, id }) => (
-        <UserCard key={id} name={user} />
+      {users.map(({ user, id, avatar, tweets, followers }) => (
+        <UserCard
+          key={id}
+          name={user}
+          avatar={avatar}
+          tweets={tweets}
+          followers={followers}
+        />
       ))}
     </Grid>
   );
