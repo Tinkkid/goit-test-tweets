@@ -10,7 +10,6 @@ import {
 import svgAbove from "../../assets/img/image-above.svg";
 import logo from "../../assets/img/logo.svg";
 import { BtnFollow } from "../ButtonFollow/ButtonFollow";
-// import { useMyStorage } from "../../hooks/useLocalStorage";
 import { useState } from "react";
 import { updateUser } from "../../services/user-api";
 import { useMyGetStorage } from "../../hooks/useLocalStorage";
@@ -41,6 +40,8 @@ export const UserCard = ({ name, tweets, followers, avatar, id }) => {
     }
   };
 
+  const nameColor = isFollowing ? "#5cd3a8" : "#EBD8FF";
+
   return (
     <Grid item xs={6} sx={stylingGrid.item}>
       <CardContainer>
@@ -54,11 +55,15 @@ export const UserCard = ({ name, tweets, followers, avatar, id }) => {
           <img src={avatar} alt="avatar" width="62" height="62" />
         </AvatarEllipse>
         <AvatarStripe></AvatarStripe>
-        <TextInfo>
+        <TextInfo
+          style={{
+            color: nameColor,
+          }}
+        >
           <b>{name}</b>
         </TextInfo>
         <TextInfo>{tweets} Tweets</TextInfo>
-        <TextInfo>{totalFollowers} Followers</TextInfo>
+        <TextInfo>{totalFollowers.toLocaleString("en-US")} Followers</TextInfo>
         <BtnFollow onClickBtn={handleClick} isFollowing={isFollowing} />
       </CardContainer>
     </Grid>

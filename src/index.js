@@ -8,7 +8,7 @@ import "./assets/fonts/Montserrat-Medium.ttf";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/goit-test-tweets">
       <App />
     </BrowserRouter>
   </React.StrictMode>
