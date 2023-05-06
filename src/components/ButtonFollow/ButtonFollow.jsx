@@ -1,5 +1,9 @@
 import { BtnFlw } from "./ButtonFollow.styled";
 
-export const BtnFollow = () => {
-  return <BtnFlw type="button">Follow</BtnFlw>;
+export const BtnFollow = ({ onClickBtn }) => {
+  return (
+    <BtnFlw type="button" onClick={onClickBtn}>
+      Follow
+    </BtnFlw>
+  );
 };

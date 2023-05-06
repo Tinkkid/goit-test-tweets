@@ -24,6 +24,7 @@ export const UsersList = ({ users }) => {
       {users.map(({ user, id, avatar, tweets, followers }) => (
         <UserCard
           key={id}
+          id={id}
           name={user}
           avatar={avatar}
           tweets={tweets}

@@ -10,12 +10,37 @@ import {
 import svgAbove from "../../assets/img/image-above.svg";
 import logo from "../../assets/img/logo.svg";
 import { BtnFollow } from "../ButtonFollow/ButtonFollow";
+// import { useMyStorage } from "../../hooks/useLocalStorage";
+import { useState } from "react";
+import { updateUser } from "../../services/user-api";
+import { useMyGetStorage } from "../../hooks/useLocalStorage";
 
-export const UserCard = (
-  { name, tweets, followers, avatar },
-  handleIncreaseQuantity,
-  tweetsTotal
-) => {
+export const UserCard = ({ name, tweets, followers, avatar, id }) => {
+  const [isFollowing, setIsFollowing] = useState(
+    useMyGetStorage(`key${id}`, false)
+  );
+
+  const [totalFollowers, setTotalFollowers] = useState(followers);
+
+  const handleClick = async () => {
+    if (!isFollowing) {
+      const updateQuantityFollowers = await updateUser(id, {
+        followers: totalFollowers + 1,
+      });
+      console.log(updateQuantityFollowers);
+      setTotalFollowers(updateQuantityFollowers.followers);
+      setIsFollowing(true);
+      localStorage.setItem(`key${id}`, JSON.stringify(true));
+    } else {
+      const updateQuantityFollowers = await updateUser(id, {
+        followers: totalFollowers - 1,
+      });
+      setTotalFollowers(updateQuantityFollowers.followers);
+      setIsFollowing(false);
+      localStorage.removeItem(`key${id}`);
+    }
+  };
+
   return (
     <Grid item xs={6} sx={stylingGrid.item}>
       <CardContainer>
@@ -33,8 +58,8 @@ export const UserCard = (
           <b>{name}</b>
         </TextInfo>
         <TextInfo>{tweets} Tweets</TextInfo>
-        <TextInfo>{followers} Followers</TextInfo>
-        <BtnFollow handleIncreaseQuantity={handleIncreaseQuantity} />
+        <TextInfo>{totalFollowers} Followers</TextInfo>
+        <BtnFollow onClickBtn={handleClick} />
       </CardContainer>
     </Grid>
   );
