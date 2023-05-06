@@ -1,5 +1,6 @@
 import { AppBar, Toolbar, Typography } from "@mui/material";
 import { useLocation } from "react-router-dom";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { GoBackLink } from "../GoBackLink/GoBackLink";
 import { styleBar, StyledLink } from "./Header.styled";
 
@@ -19,6 +20,7 @@ const Header = () => {
           </StyledLink>
         ) : (
           <GoBackLink to={backLinkHref}>
+            <ArrowBackIcon />
             <Typography variant="h5" component="span">
               Back
             </Typography>

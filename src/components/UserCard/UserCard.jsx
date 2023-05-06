@@ -6,14 +6,18 @@ import {
   AvatarEllipse,
   AvatarStripe,
   TextInfo,
-  BtnFollow,
 } from "./UserCard.styled";
 import svgAbove from "../../assets/img/image-above.svg";
 import logo from "../../assets/img/logo.svg";
+import { BtnFollow } from "../ButtonFollow/ButtonFollow";
 
-export const UserCard = ({ name, tweets, followers, avatar }) => {
+export const UserCard = (
+  { name, tweets, followers, avatar },
+  handleIncreaseQuantity,
+  tweetsTotal
+) => {
   return (
-    <Grid xs={6} sx={stylingGrid.item}>
+    <Grid item xs={6} sx={stylingGrid.item}>
       <CardContainer>
         <Logo>
           <img src={logo} alt="logo" />
@@ -30,7 +34,7 @@ export const UserCard = ({ name, tweets, followers, avatar }) => {
         </TextInfo>
         <TextInfo>{tweets} Tweets</TextInfo>
         <TextInfo>{followers} Followers</TextInfo>
-        <BtnFollow>Follow</BtnFollow>
+        <BtnFollow handleIncreaseQuantity={handleIncreaseQuantity} />
       </CardContainer>
     </Grid>
   );
