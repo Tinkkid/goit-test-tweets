@@ -12,12 +12,13 @@ import logo from '../../assets/img/logo.svg';
 import { BtnFollow } from '../ButtonFollow/ButtonFollow';
 import { useState } from 'react';
 import { updateUser } from '../../services/user-api';
-import { localGetStorage } from '../../helpers/useLocalStorage';
+import { localGetStorage } from '../../helpers/helpers';
 
 export const UserCard = ({ name, tweets, followers, avatar, id }) => {
   const [isFollowing, setIsFollowing] = useState(
     localGetStorage(`key${id}`, false)
   );
+
   const [totalFollowers, setTotalFollowers] = useState(followers);
 
   const handleClick = async () => {

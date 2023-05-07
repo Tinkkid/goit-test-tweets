@@ -1,6 +1,6 @@
-import { Grid } from "@mui/material";
-import { UserCard } from "../UserCard/UserCard";
-import { stylingGrid } from "../UserCard/UserCard.styled";
+import { Grid } from '@mui/material';
+import { UserCard } from '../UserCard/UserCard';
+import { stylingGrid } from '../UserCard/UserCard.styled';
 
 export const UsersList = ({ users }) => {
   return (
@@ -12,7 +12,7 @@ export const UsersList = ({ users }) => {
     >
       {users.map(({ user, id, avatar, tweets, followers }) => (
         <UserCard
-          key={id}
+          key={`${user}}_${id}`}
           id={id}
           name={user}
           avatar={avatar}

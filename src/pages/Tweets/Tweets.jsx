@@ -3,7 +3,7 @@ import { BtnLoadMore } from '../../components/ButtonLoad/BtnLoadMore';
 import Filter from '../../components/FilterButton/FilterButton';
 import { ScrollButton } from '../../components/ScrollBtn/ScrollBtn';
 import { UsersList } from '../../components/UsersList/UsersList';
-// import { useMyGetStorage } from '../../hooks/useLocalStorage';
+import { getFiltredUsers, localGetStorage } from '../../helpers/helpers';
 import { fetchFilterUser, fetchUser } from '../../services/user-api';
 import { Container } from './Tweets.styled';
 
@@ -11,10 +11,10 @@ const Tweets = () => {
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(1);
   const [allUsers, setAllUsers] = useState(
-    localStorage.getItem('filterValue') || null
+    localGetStorage('filterValue-filter', null)
   );
   const [selectFilter, setSelectFilter] = useState(
-    JSON.parse(localStorage.getItem('select-filter')) || 'showAll'
+    localGetStorage('select-filter', 'showAll')
   );
 
   useEffect(() => {
@@ -50,23 +50,6 @@ const Tweets = () => {
   const handleChange = event => {
     setSelectFilter(event.target.value);
     localStorage.setItem('select-filter', JSON.stringify(event.target.value));
-  };
-
-  const getFiltredUsers = (filter, followers) => {
-    switch (filter) {
-      case 'follow':
-        return followers.filter(
-          user => JSON.parse(localStorage.getItem(`key${user.id}`)) !== true
-        );
-      case 'following':
-        return followers.filter(
-          user => JSON.parse(localStorage.getItem(`key${user.id}`)) === true
-        );
-      case 'showAll':
-        return followers;
-      default:
-        break;
-    }
   };
 
   const filteredUsers = getFiltredUsers(selectFilter, users);
