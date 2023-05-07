@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const CardContainer = styled.div`
   display: flex;
@@ -32,7 +32,7 @@ export const stylingGrid = {
   },
   item: {
     paddingLeft: 0,
-    justifyContent: "space-between",
+    justifyContent: 'space-between',
   },
 };
 
@@ -60,7 +60,7 @@ export const AvatarStripe = styled.div`
   position: absolute;
   width: 100%;
   height: 8px;
-  top: 45%;
+  top: 48%;
   background: #ebd8ff;
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
     inset 0px -1.71846px 3.43693px #ae7be3, inset 0px 3.43693px 2.5777px #fbf8ff;
@@ -68,7 +68,7 @@ export const AvatarStripe = styled.div`
 
 export const TextInfo = styled.p`
   margin-top: 16px;
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;

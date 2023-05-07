@@ -18,6 +18,6 @@ export const BtnFlw = styled.button`
 
   &:hover,
   &:focus {
-    background: #5cd3a8;
+    background-color: #5cd3a8;
   }
 `;

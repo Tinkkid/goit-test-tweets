@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { NavLink } from "react-router-dom";
+import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const StyledLink = styled(NavLink)`
   color: white;
@@ -8,11 +8,13 @@ export const StyledLink = styled(NavLink)`
 
 export const styleBar = {
   appbar: {
-    bgcolor: "primary.main",
-    fontFamily: "Montserrat",
-    textTransform: "uppercase",
+    bgcolor: '#5736a3',
+    fontFamily: 'Montserrat',
+    textTransform: 'uppercase',
+    paddingLeft: 4,
+    paddingRight: 4,
   },
   toolbar: {
-    justifyContent: "center",
+    justifyContent: 'space-between',
   },
 };

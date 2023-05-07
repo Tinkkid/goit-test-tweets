@@ -1,13 +1,14 @@
-import { AppBar, Toolbar, Typography } from "@mui/material";
-import { useLocation } from "react-router-dom";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { GoBackLink } from "../GoBackLink/GoBackLink";
-import { styleBar, StyledLink } from "./Header.styled";
+import { AppBar, Toolbar, Typography } from '@mui/material';
+import { useLocation } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { GoBackLink } from '../GoBackLink/GoBackLink';
+import { styleBar, StyledLink } from './Header.styled';
+import logo from '../../assets/img/logo.svg';
 
 const Header = () => {
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? "/";
-  const tweetsPage = location.pathname === "/tweets";
+  const backLinkHref = location.state?.from ?? '/';
+  const tweetsPage = location.pathname === '/tweets';
 
   return (
     <AppBar position="static" sx={styleBar.appbar}>
@@ -26,6 +27,13 @@ const Header = () => {
             </Typography>
           </GoBackLink>
         )}
+        <a
+          href="https://goit.global/ua/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={logo} alt="logo" width="100" />
+        </a>
       </Toolbar>
     </AppBar>
   );
