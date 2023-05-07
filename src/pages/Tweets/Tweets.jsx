@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
-import { BtnLoadMore } from "../../components/ButtonLoad/BtnLoadMore";
-import { UsersList } from "../../components/UsersList/UsersList";
-import { fetchUser } from "../../services/user-api";
-import { Container } from "./Tweets.styled";
+import { useEffect, useState } from 'react';
+import { BtnLoadMore } from '../../components/ButtonLoad/BtnLoadMore';
+import { ScrollButton } from '../../components/ScrollBtn/ScrollBtn';
+import { UsersList } from '../../components/UsersList/UsersList';
+import { fetchUser } from '../../services/user-api';
+import { Container } from './Tweets.styled';
 
 const Tweets = () => {
   const [users, setUsers] = useState([]);
@@ -11,8 +12,8 @@ const Tweets = () => {
   useEffect(() => {
     const getUsers = async () => {
       try {
-        await fetchUser(page).then((response) => {
-          setUsers((prevState) => [...prevState, ...response]);
+        await fetchUser(page).then(response => {
+          setUsers(prevState => [...prevState, ...response]);
         });
       } catch (error) {
         console.warn(error.message);
@@ -21,12 +22,13 @@ const Tweets = () => {
     getUsers();
   }, [page]);
 
-  const onLoadMore = () => setPage((prevState) => prevState + 1);
+  const onLoadMore = () => setPage(prevState => prevState + 1);
 
   return (
     <Container>
       <UsersList users={users} />
       {users && <BtnLoadMore onClick={onLoadMore} />}
+      <ScrollButton />
     </Container>
   );
 };
