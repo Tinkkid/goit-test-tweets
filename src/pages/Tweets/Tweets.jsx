@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BtnLoadMore } from '../../components/ButtonLoad/BtnLoadMore';
+import Filter from '../../components/FilterButton/FilterButton';
 import { ScrollButton } from '../../components/ScrollBtn/ScrollBtn';
 import { UsersList } from '../../components/UsersList/UsersList';
 import { fetchUser } from '../../services/user-api';
@@ -8,6 +9,7 @@ import { Container } from './Tweets.styled';
 const Tweets = () => {
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(1);
+  const [selectFilter, setSelectFilter] = useState('');
 
   useEffect(() => {
     const getUsers = async () => {
@@ -23,9 +25,14 @@ const Tweets = () => {
   }, [page]);
 
   const onLoadMore = () => setPage(prevState => prevState + 1);
+  const selectUsers = selectFilter;
+  const handleChange = event => {
+    setSelectFilter(event.target.value);
+  };
 
   return (
     <Container>
+      <Filter handleChange={handleChange} selectUsers={selectUsers} />
       <UsersList users={users} />
       {users && <BtnLoadMore onClick={onLoadMore} />}
       <ScrollButton />

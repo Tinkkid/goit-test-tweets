@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid } from '@mui/material';
 import {
   CardContainer,
   stylingGrid,
@@ -6,13 +6,13 @@ import {
   AvatarEllipse,
   AvatarStripe,
   TextInfo,
-} from "./UserCard.styled";
-import svgAbove from "../../assets/img/image-above.svg";
-import logo from "../../assets/img/logo.svg";
-import { BtnFollow } from "../ButtonFollow/ButtonFollow";
-import { useState } from "react";
-import { updateUser } from "../../services/user-api";
-import { useMyGetStorage } from "../../hooks/useLocalStorage";
+} from './UserCard.styled';
+import svgAbove from '../../assets/img/image-above.svg';
+import logo from '../../assets/img/logo.svg';
+import { BtnFollow } from '../ButtonFollow/ButtonFollow';
+import { useState } from 'react';
+import { updateUser } from '../../services/user-api';
+import { useMyGetStorage } from '../../hooks/useLocalStorage';
 
 export const UserCard = ({ name, tweets, followers, avatar, id }) => {
   const [isFollowing, setIsFollowing] = useState(
@@ -38,7 +38,7 @@ export const UserCard = ({ name, tweets, followers, avatar, id }) => {
     }
   };
 
-  const nameColor = isFollowing ? "#5cd3a8" : "#EBD8FF";
+  const nameColor = isFollowing ? '#5cd3a8' : '#EBD8FF';
 
   return (
     <Grid item xs={6} sx={stylingGrid.item}>
@@ -61,7 +61,7 @@ export const UserCard = ({ name, tweets, followers, avatar, id }) => {
           <b>{name}</b>
         </TextInfo>
         <TextInfo>{tweets} Tweets</TextInfo>
-        <TextInfo>{totalFollowers.toLocaleString("en-US")} Followers</TextInfo>
+        <TextInfo>{totalFollowers.toLocaleString('en-US')} Followers</TextInfo>
         <BtnFollow onClickBtn={handleClick} isFollowing={isFollowing} />
       </CardContainer>
     </Grid>
