@@ -3,7 +3,7 @@ import axios from "axios";
 axios.defaults.baseURL = "https://643d1d456afd66da6aed0244.mockapi.io";
 
 export async function fetchUser(page = 1) {
-  const response = await axios.get(`/tweets?page=${page}&limit=3`);
+  const response = await axios(`/tweets?page=${page}&limit=4`);
   return response.data;
 }
 

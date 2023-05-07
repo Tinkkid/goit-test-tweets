@@ -25,6 +25,7 @@ export const stylingGrid = {
   container: {
     padding: 20,
     paddingTop: 6,
+    paddingBottom: 4,
     marginTop: 0,
     marginLeft: 0,
     width: 1,
