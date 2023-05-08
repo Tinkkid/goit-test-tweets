@@ -7,7 +7,7 @@ const Tweets = lazy(() => import('./pages/Tweets/Tweets.jsx'));
 
 function App() {
   return (
-    <Routes basename="/goit-test-tweets">
+    <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="/tweets" element={<Tweets />} />
