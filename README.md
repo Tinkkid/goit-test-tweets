@@ -1,4 +1,4 @@
-# Test Tweets
+# Follow to friend's tweets
 
 ## A simple app where you can choose users and follow to them. Contains /home and /tweets pages.
 
