@@ -1,6 +1,6 @@
 # Follow to friend's tweets
 
-## A simple app where you can choose users and follow to them. Contains /home and /tweets pages.
+## A simple app where you can select users and follow to them. Contains /home and /tweets pages.
 
 In this project were used:
 
