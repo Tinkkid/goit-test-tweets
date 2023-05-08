@@ -69,10 +69,12 @@ const Tweets = () => {
     <Container>
       {error && <p>Something went wrong!</p>}
       {isLoading && <Loader />}
-      <Filter handleChange={handleChange} selectFilter={selectFilter} />
+      {!error && !isLoading && (
+        <Filter handleChange={handleChange} selectFilter={selectFilter} />
+      )}
       {filteredUsers && <UsersList users={filteredUsers} />}
       {users && !error && !isLoading && <BtnLoadMore onClick={onLoadMore} />}
-      <ScrollButton />
+      {users && !error && !isLoading && <ScrollButton />}
     </Container>
   );
 };

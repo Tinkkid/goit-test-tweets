@@ -1,15 +1,9 @@
-import { Grid } from '@mui/material';
 import { UserCard } from '../UserCard/UserCard';
-import { stylingGrid } from '../UserCard/UserCard.styled';
+import { Container } from './UserList.styled';
 
 export const UsersList = ({ users }) => {
   return (
-    <Grid
-      container
-      rowSpacing={4}
-      columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-      sx={stylingGrid.container}
-    >
+    <Container>
       {users.map(({ user, id, avatar, tweets, followers }) => (
         <UserCard
           key={`${user}}_${id}`}
@@ -21,6 +15,6 @@ export const UsersList = ({ users }) => {
           tweetsTotal={tweets}
         />
       ))}
-    </Grid>
+    </Container>
   );
 };
