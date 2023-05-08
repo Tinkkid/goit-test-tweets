@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { BtnFlw } from './ButtonFollow.styled';
 
 export const BtnFollow = ({ onClickBtn, isFollowing }) => {
@@ -16,4 +17,9 @@ export const BtnFollow = ({ onClickBtn, isFollowing }) => {
       {isFollowing ? <p>Following</p> : <p>Follow</p>}
     </BtnFlw>
   );
+};
+
+BtnFollow.propTypes = {
+  onClickBtn: PropTypes.func.isRequired,
+  isFollowing: PropTypes.bool.isRequired,
 };

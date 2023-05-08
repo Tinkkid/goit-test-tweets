@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   CardContainer,
   Logo,
@@ -65,4 +66,11 @@ export const UserCard = ({ name, tweets, followers, avatar, id }) => {
       </CardContainer>
     </div>
   );
+};
+
+UserCard.propTypes = {
+  id: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  tweets: PropTypes.number.isRequired,
+  followers: PropTypes.number.isRequired,
 };

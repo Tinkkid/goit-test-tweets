@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -31,3 +32,8 @@ export default function Filter({ handleChange, selectFilter }) {
     </FormControl>
   );
 }
+
+Filter.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  selectFilter: PropTypes.string.isRequired,
+};
