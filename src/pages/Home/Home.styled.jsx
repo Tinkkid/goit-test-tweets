@@ -8,7 +8,7 @@ export const ContainerHome = styled.div`
   text-align: center;
   margin: 90px auto;
   width: fit-content;
-  padding: 0 30px;
+  padding: 20px 40px;
   box-shadow: -2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23);
   border-radius: 10px;
   border: 5px solid #ae7be3;
