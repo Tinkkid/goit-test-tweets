@@ -48,7 +48,10 @@ export const LinkInfo = styled.h3`
   font-weight: 700;
 `;
 
-export const StyledLink = styled(NavLink)``;
+export const StyledLink = styled(NavLink)`
+  color: #4313b4ad;
+  text-decoration: none;
+`;
 
 export const StyledIcon = styled.span`
   display: flex;

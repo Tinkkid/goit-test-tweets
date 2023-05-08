@@ -7,9 +7,9 @@ export const ScrollButton = () => {
 
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 300) {
+    if (scrolled > 400) {
       setVisible(true);
-    } else if (scrolled <= 300) {
+    } else if (scrolled <= 400) {
       setVisible(false);
     }
   };
@@ -27,7 +27,7 @@ export const ScrollButton = () => {
     <Button>
       <ArrowUpwardIcon
         onClick={scrollToTop}
-        style={{ display: visible ? 'inline' : 'none' }}
+        style={{ display: visible ? 'inline' : 'none', color: '#461ca9e0' }}
         width="30"
         height="30"
       />
