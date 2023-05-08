@@ -18,7 +18,7 @@ export const Button = styled.button`
 
     @keyframes pulse {
       0% {
-        box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+        box-shadow: 0 0 0 0 rgba(76, 44, 204, 0.4);
       }
       70% {
         box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
