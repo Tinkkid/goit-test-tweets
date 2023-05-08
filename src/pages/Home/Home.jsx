@@ -21,7 +21,7 @@ const Home = () => {
         <Title>Hi! Welcome to Tweets App</Title>
         <Info>Choose friends to follow them.</Info>
         <ContainerLink>
-          <LinkInfo>Lets start!</LinkInfo>
+          <LinkInfo>Let's start!</LinkInfo>
           <StyledLink to="/tweets">
             <StyledIcon>
               <ArrowForwardIcon sx={{ fontSize: 40 }} />
