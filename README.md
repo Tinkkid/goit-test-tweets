@@ -10,3 +10,9 @@ In this project were used:
 - [Emotion](https://emotion.sh/docs/introduction) for styled components.
 - [Axios](https://axios-http.com/docs/intro) for http requests to
   [MockApi](https://mockapi.io/) with data.
+
+### for run project use:
+
+npm install
+
+Link to page: [goit-test-tweets](https://tinkkid.github.io/goit-test-tweets/)
