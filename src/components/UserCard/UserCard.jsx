@@ -41,7 +41,7 @@ export const UserCard = ({ name, tweets, followers, avatar, id }) => {
   const nameColor = isFollowing ? '#5cd3a8' : '#EBD8FF';
 
   return (
-    <div>
+    <li>
       <CardContainer>
         <Logo>
           <img src={logo} alt="logo" />
@@ -64,7 +64,7 @@ export const UserCard = ({ name, tweets, followers, avatar, id }) => {
         <TextInfo>{totalFollowers.toLocaleString('en-US')} Followers</TextInfo>
         <BtnFollow onClickBtn={handleClick} isFollowing={isFollowing} />
       </CardContainer>
-    </div>
+    </li>
   );
 };
 

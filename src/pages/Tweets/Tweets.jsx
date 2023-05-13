@@ -72,7 +72,6 @@ const Tweets = () => {
       {!error && !isLoading && (
         <Filter handleChange={handleChange} selectFilter={selectFilter} />
       )}
-
       <UsersList users={filteredUsers} />
       {users && !error && !isLoading && <BtnLoadMore onClick={onLoadMore} />}
       {users && !error && !isLoading && <ScrollButton />}
