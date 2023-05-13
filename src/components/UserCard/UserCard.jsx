@@ -1,19 +1,18 @@
 import PropTypes from 'prop-types';
 import {
   CardContainer,
-  Logo,
   AvatarEllipse,
-  AvatarStripe,
+  UpperContainer,
   TextInfo,
+  InfoContainer,
 } from './UserCard.styled';
-import svgAbove from '../../assets/img/image-above.svg';
 import logo from '../../assets/img/logo.svg';
 import { BtnFollow } from '../ButtonFollow/ButtonFollow';
 import { useState } from 'react';
 import { updateUser } from '../../services/user-api';
 import { localGetStorage } from '../../helpers/helpers';
 
-export const UserCard = ({ name, tweets, followers, avatar, id }) => {
+export const UserCard = ({ tweets, followers, avatar, id }) => {
   const [isFollowing, setIsFollowing] = useState(
     localGetStorage(`key${id}`, false)
   );
@@ -38,33 +37,24 @@ export const UserCard = ({ name, tweets, followers, avatar, id }) => {
     }
   };
 
-  const nameColor = isFollowing ? '#5cd3a8' : '#EBD8FF';
-
   return (
-    <li>
-      <CardContainer>
-        <Logo>
-          <img src={logo} alt="logo" />
-        </Logo>
+    <CardContainer>
+      <UpperContainer>
         <div>
-          <img src={svgAbove} alt="tweets" />
+          <img src={logo} alt="logo" width="76" height="22" />
         </div>
         <AvatarEllipse>
           <img src={avatar} alt="avatar" width="62" height="62" />
         </AvatarEllipse>
-        <AvatarStripe></AvatarStripe>
-        <TextInfo
-          style={{
-            color: nameColor,
-          }}
-        >
-          <b>{name}</b>
+      </UpperContainer>
+      <InfoContainer>
+        <TextInfo>
+          <p>{tweets} Tweets</p>
+          <p>{totalFollowers.toLocaleString('en-US')} Followers</p>
         </TextInfo>
-        <TextInfo>{tweets} Tweets</TextInfo>
-        <TextInfo>{totalFollowers.toLocaleString('en-US')} Followers</TextInfo>
         <BtnFollow onClickBtn={handleClick} isFollowing={isFollowing} />
-      </CardContainer>
-    </li>
+      </InfoContainer>
+    </CardContainer>
   );
 };
 
