@@ -32,7 +32,7 @@ export const Title = styled.h1`
 
 export const Info = styled.h2`
   color: #461ca9e0;
-  margin-bottom: 20px;
+  margin: 20px 0;
 `;
 
 export const ContainerLink = styled.div`
