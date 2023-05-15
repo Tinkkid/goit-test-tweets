@@ -67,7 +67,7 @@ const Tweets = () => {
 
   return (
     <Container>
-      {error && <p>Something went wrong!</p>}
+      {error && <p>Something went wrong! Please, reload page</p>}
       {isLoading && <Loader />}
       {!error && !isLoading && (
         <Filter handleChange={handleChange} selectFilter={selectFilter} />
